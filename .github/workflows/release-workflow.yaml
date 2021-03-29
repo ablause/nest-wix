@@ -65,10 +65,10 @@ jobs:
 
       - name: Install
         if: steps.cache-modules.outputs.cache-hit != 'true'
-        run: yarn install
+        run: yarn install --non-interactive
 
       - name: Bump version
-        run: yarn version ${{ github.event.release.tag_name }}
+        run: yarn version --new-version ${{ github.event.release.tag_name }}
 
       - name: Build package
         run: yarn build
