@@ -1,4 +1,4 @@
-name: Build, Test and maybe Publish
+name: Build, Test and Publish
 
 on:
   push:
@@ -70,7 +70,7 @@ jobs:
         run: yarn install --non-interactive
 
       - name: Bump version
-        run: yarn version --prerelease --preid=ci-$GITHUB_RUN_ID --no-git-tag-version
+        run: yarn version --prerelease --preid=alpha --no-git-tag-version
 
       - name: Build package
         run: yarn build
